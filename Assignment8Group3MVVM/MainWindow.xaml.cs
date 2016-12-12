@@ -20,9 +20,17 @@ namespace Assignment8Group3MVVM
     /// </summary>
     public partial class MainWindow : Window
     {
+        WorldSeriesWinner wsn;
         public MainWindow()
         {
             InitializeComponent();
+            wsn = new WorldSeriesWinner();
+            DataContext = wsn;
+        }
+
+        private void btnResult_Click(object sender, RoutedEventArgs e)
+        {
+            wsn.GetResult();
         }
     }
 }
